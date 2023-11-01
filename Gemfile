@@ -50,3 +50,6 @@ gem "jwt"
 
 gem "fast_jsonapi"
 
+gem 'sidekiq', '~> 5.2.8' 
+gem "sidekiq-cron" 
+
