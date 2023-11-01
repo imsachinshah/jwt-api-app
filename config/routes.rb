@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users, :posts
+  get "/notifications", to: "notifications#index"
   
+  resources :users, :posts
+
   post '/auth/login', to: 'authentication#login'
 end

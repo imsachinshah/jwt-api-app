@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
- 	before_action :set_post
+ 	before_action :set_post, only: [:show, :update, :destroy]
 
 	def index
 		@posts = @current_user.posts 
@@ -13,8 +13,6 @@ class PostsController < ApplicationController
 
 	def create
 		@post = @current_user.posts.new(post_params)
-
-		debugger
 
 		if @post.save
 			render json: PostSerializer.new(@post).serializable_hash, status: :created
@@ -50,7 +48,7 @@ class PostsController < ApplicationController
 			begin
 				@post = @current_user.posts.find(params[:id])
 			rescue ActiveRecord::RecordNotFound => e
-				render json: {errors: e.messages}, status: :bad_request
+				render json: {errors: e.message}, status: :bad_request
 			end
 		end
 
