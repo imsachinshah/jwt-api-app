@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :notifications 
+  has_many_attached :post_images
 
   after_create :create_notification
 
