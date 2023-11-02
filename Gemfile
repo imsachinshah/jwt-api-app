@@ -53,4 +53,5 @@ gem "fast_jsonapi"
 gem 'sidekiq', '~> 5.2.8' 
 gem "sidekiq-cron" 
 gem "image_processing", ">= 1.2"
+gem 'dotenv-rails'
 

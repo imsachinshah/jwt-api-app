@@ -25,12 +25,40 @@ class PostsController < ApplicationController
 		render json: PostSerializer.new(@post).serializable_hash, status: :ok
 	end	
 
+	# def update
+	# # 	if params[:post][:post_images].present?
+	# # 		@post.post_images.purge
+	# # 	end
+	# 	if @post.update(post_params.except("post_images"))
+	# 		if params[:post][:post_images].present?
+	# 			@post.post_images.purge if @post.post_images.present?
+
+	# 		end
+	# 		render json: PostSerializer.new(@post).serializable_hash, status: :ok
+	# 	else
+	# 		render json: @post.errors, status: :unprocessable_entity
+	# 	end
+	# end
+
+	# def update
+	# 	@post.update(post_params.except("post_images"))
+	# 	if params[:post][:post_images].present?
+	# 		@post.post_images.purge if @post.post_images.present?
+	# 		params[:post][:post_images].each do |image|
+	# 			@post.post_images.attach(image)
+	# 		end
+	# 	end
+	# end
+
 	def update
-		if @post.update(post_params)
-			render json: PostSerializer.new(@post).serializable_hash, status: :ok
-		else
-			render json: @post.errors, status: :unprocessable_entity
-		end
+	  @post.update(post_params.except("post_images"))
+	  @post.post_images.purge if ( @post.post_images.present? && params[:post][:post_images].present? )
+	  if params[:post][:post_images].present?
+	    params[:post][:post_images].each do |image|
+			  @post.post_images.attach(image)
+		  end
+	  end
+	  render json: PostSerializer.new(@post).serializable_hash, status: :ok
 	end
 
 	def destroy
@@ -41,7 +69,7 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :desc)
+			params.require(:post).permit(:title, :desc, :status, post_images: [])
 		end
 
 		def set_post
