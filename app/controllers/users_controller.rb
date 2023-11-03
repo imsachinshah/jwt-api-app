@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	skip_before_action :authenticate_request, only: [:create]
 	# before_action :set_user, only: [:show, :update, :destroy]
+	include TwilioSmsVerify
 
 	def index
 		@users = User.all 
@@ -16,7 +17,8 @@ class UsersController < ApplicationController
 
 		if @user.save
 			@otp_token = @user.create_otp
-			@user_token = Jwt.jwt_encode(user_id: @user.id)
+			@user_token = Jwt.jwt_encode({user_id: @user.id}, 7.days.from_now)
+			phone_twilio_otp(@user)
 			render json: UserSerializer.new(@user, meta: {otp_token: @otp_token, user_token: @user_token}).serializable_hash, status: :created
 		else
 			render json: @user.errors, status: :unprocessable_entity
@@ -43,7 +45,13 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params.require(:user).permit(:name, :email, :password, :username, :avatar)
+			params.require(:user).permit(:name, :email, :password, :username, :avatar, :country_code, :phone_number)
+		end
+
+		def phone_twilio_otp(user)
+			otp_token = Jwt.jwt_decode(@otp_token)
+			otp = EmailOtp.find(otp_token[:otp_id])
+			TwilioOtp.new(otp.pin, user).call
 		end
 
 end
