@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
 		@user = User.find_by_email(params[:email])
 		if (@user&.authenticate(params[:password]))
 			if @user.activated?
-				token = Jwt.jwt_encode(user_id: @user.id)
+				token = Jwt.jwt_encode({user_id: @user.id}, 7.days.from_now)
 				render json: {token: token}, status: :ok
 			else
 				render json: {error: "First verify account by OTP for login"}, status: :bad_request
