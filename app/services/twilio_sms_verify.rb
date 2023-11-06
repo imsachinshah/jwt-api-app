@@ -11,7 +11,6 @@ module TwilioSmsVerify
 		end 
 
 		def send_otp 
-			debugger
 			@client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 			message = @client.messages.create(
 				body: "OTP for account verification is #{@otp}",
