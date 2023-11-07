@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
-	skip_before_action :authenticate_request, only: [:create]
+	skip_before_action :authenticate_request, only: [:create, :index]
 	# before_action :set_user, only: [:show, :update, :destroy]
 	include TwilioSmsVerify
 
 	def index
 		@users = User.all 
-		if @users
+		if @users.present?
 			render json: UserSerializer.new(@users).serializable_hash, status: :ok
 		else
-			render json: @users.errors, status: :bad_request
+			render json: {message: "There are no user"}, status: :bad_request
 		end
 	end
 
