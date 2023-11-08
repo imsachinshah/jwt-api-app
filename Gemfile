@@ -46,6 +46,7 @@ group :test do
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
   gem "rails-controller-testing"
+  gem 'rspec-sidekiq'
 end
 
 group :development do

@@ -11,123 +11,14 @@
           1,
           null,
           1,
-          6,
-          6,
+          2,
+          2,
           null,
-          null,
-          1,
-          5,
-          5,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/rails-107/rails_work/jwt-app/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
           null,
           1,
           2,
           2,
-          1,
           null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          2,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          4,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/rails-107/rails_work/jwt-app/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          4,
-          4,
-          4,
-          4,
-          null,
-          null
-        ]
-      },
-      "/home/rails-107/rails_work/jwt-app/app/services/twilio_sms_verify.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
           null,
           null,
           null
@@ -153,10 +44,10 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -165,22 +56,6 @@
         "lines": [
           1,
           1,
-          null
-        ]
-      },
-      "/home/rails-107/rails_work/jwt-app/app/serializers/user_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          4,
-          0,
-          null,
-          4,
-          null,
-          null,
           null
         ]
       },
@@ -193,21 +68,38 @@
           null
         ]
       },
-      "/home/rails-107/rails_work/jwt-app/app/models/post.rb": {
+      "/home/rails-107/rails_work/jwt-app/app/controllers/email_otps_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/rails-107/rails_work/jwt-app/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          null,
-          1,
-          1,
           null,
           1,
           null,
           1,
           1,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -251,26 +143,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/rails-107/rails_work/jwt-app/app/controllers/email_otps_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0
         ],
         "branches": {
@@ -358,6 +230,69 @@
         "branches": {
         }
       },
+      "/home/rails-107/rails_work/jwt-app/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/rails-107/rails_work/jwt-app/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -408,6 +343,27 @@
         "branches": {
         }
       },
+      "/home/rails-107/rails_work/jwt-app/app/models/post.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/rails-107/rails_work/jwt-app/app/serializers/post_serializer.rb": {
         "lines": [
           0,
@@ -431,8 +387,59 @@
         ],
         "branches": {
         }
+      },
+      "/home/rails-107/rails_work/jwt-app/app/serializers/user_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/rails-107/rails_work/jwt-app/app/services/twilio_sms_verify.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1699363895
+    "timestamp": 1699437737
   }
 }

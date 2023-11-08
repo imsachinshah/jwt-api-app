@@ -213,6 +213,11 @@ GEM
       rspec-expectations (~> 3.12)
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
+    rspec-sidekiq (4.1.0)
+      rspec-core (~> 3.0)
+      rspec-expectations (~> 3.0)
+      rspec-mocks (~> 3.0)
+      sidekiq (>= 5, < 8)
     rspec-support (3.12.1)
     ruby-vips (2.2.0)
       ffi (~> 1.12)
@@ -266,6 +271,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   rails-controller-testing
   rspec-rails
+  rspec-sidekiq
   shoulda-matchers
   sidekiq (~> 5.2.8)
   sidekiq-cron
