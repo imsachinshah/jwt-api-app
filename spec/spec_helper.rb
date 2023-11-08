@@ -12,7 +12,15 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+require "simplecov"
 require "shoulda/matchers"
+require 'sidekiq/testing'
+SimpleCov.start('rails') do
+  add_group "Models", "app/models"
+  add_group "Controllers", "app/controllers"
+  add_group "Admins", "app/admin"
+  add_group "Multiple Files", ["app/models", "app/controllers"] # You can also pass in an array
+end
 # require "shoulda/matchers/integrations/rspec"
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -93,4 +101,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  # config.enable_terminal_colours = false
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
+  end
 end

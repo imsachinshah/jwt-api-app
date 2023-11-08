@@ -1,7 +1,10 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :notifications 
+  has_many :notifications, dependent: :destroy 
   has_many_attached :post_images
+
+  validates :title, presence: true
+  validates :desc, presence: true
 
   after_create :create_notification
 
